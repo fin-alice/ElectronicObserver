@@ -1,4 +1,6 @@
-﻿namespace ElectronicObserver.Window {
+﻿using System.Windows.Forms;
+
+namespace ElectronicObserver.Window {
 	partial class FormInformation {
 		/// <summary>
 		/// Required designer variable.
@@ -23,7 +25,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.TextInformation = new System.Windows.Forms.RichTextBox();
+			this.TextInformation = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// TextInformation
@@ -31,13 +33,14 @@
 			this.TextInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.TextInformation.AutoWordSelection = true;
 			this.TextInformation.BackColor = System.Drawing.SystemColors.Control;
 			this.TextInformation.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.TextInformation.Location = new System.Drawing.Point(3, 3);
+			this.TextInformation.Multiline = true;
 			this.TextInformation.Name = "TextInformation";
 			this.TextInformation.ReadOnly = true;
 			this.TextInformation.Size = new System.Drawing.Size(294, 194);
+			this.TextInformation.ScrollBars = ScrollBars.Vertical;
 			this.TextInformation.TabIndex = 0;
 			this.TextInformation.Text = "";
 			// 
@@ -60,6 +63,6 @@
 
 		#endregion
 
-		private System.Windows.Forms.RichTextBox TextInformation;
+		private System.Windows.Forms.TextBox TextInformation;
 	}
 }

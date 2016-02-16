@@ -15,7 +15,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace ElectronicObserver.Window {
 
-	public partial class FormInformation : DockContent {
+	public partial class FormInformation : DockContentBase {
 
 		private int _ignorePort;
 		private List<int> _inSortie;

@@ -20,7 +20,7 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace ElectronicObserver.Window {
-	public partial class FormShipGroup : DockContent {
+	public partial class FormShipGroup : DockContentBase {
 
 
 		/// <summary>タブ背景色(アクティブ)</summary>

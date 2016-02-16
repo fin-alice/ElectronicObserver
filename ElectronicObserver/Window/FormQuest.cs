@@ -16,7 +16,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace ElectronicObserver.Window {
 
-	public partial class FormQuest : DockContent {
+	public partial class FormQuest : DockContentBase {
 
 		private DataGridViewCellStyle CSDefaultLeft, CSDefaultCenter;
 		private DataGridViewCellStyle[] CSCategories;

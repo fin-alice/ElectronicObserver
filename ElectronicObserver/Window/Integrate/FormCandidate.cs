@@ -13,7 +13,7 @@ namespace ElectronicObserver.Window.Integrate {
 	/// <summary>
 	/// 選択中のウィンドウに表示する枠
 	/// </summary>
-	public partial class FormCandidate : Form {
+	public partial class FormCandidate : FormBase {
 
 		private Pen blackPen = new Pen( Color.Black, 5 );
 

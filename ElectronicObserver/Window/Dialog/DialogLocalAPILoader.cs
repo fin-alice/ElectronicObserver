@@ -11,7 +11,7 @@ using System.IO;
 using ElectronicObserver.Observer;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogLocalAPILoader : Form {
+	public partial class DialogLocalAPILoader : FormBase {
 
 		public string FilePath {
 			get { return TextFilePath.Text; }

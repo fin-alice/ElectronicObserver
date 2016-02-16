@@ -17,7 +17,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace ElectronicObserver.Window {
 
-	public partial class FormFleetOverview : DockContent {
+	public partial class FormFleetOverview : DockContentBase {
 
 		private class TableFleetControl {
 

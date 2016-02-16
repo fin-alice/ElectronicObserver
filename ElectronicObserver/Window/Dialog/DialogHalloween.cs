@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogHalloween : Form {
+	public partial class DialogHalloween : FormBase {
 
 		private Bitmap canvas;
 		private Bitmap[] fairies;

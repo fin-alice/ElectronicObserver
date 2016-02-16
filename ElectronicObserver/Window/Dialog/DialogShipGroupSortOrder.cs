@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogShipGroupSortOrder : Form {
+	public partial class DialogShipGroupSortOrder : FormBase {
 
 		public List<KeyValuePair<string, ListSortDirection>> Result { get; private set; }
 		public bool AutoSortEnabled { get { return AutoSortFlag.Checked; } }

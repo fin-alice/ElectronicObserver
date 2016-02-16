@@ -18,7 +18,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace ElectronicObserver.Window {
 
-	public partial class FormBattle : DockContent {
+	public partial class FormBattle : DockContentBase {
 
 		private readonly Color WinRankColor_Win = SystemColors.ControlText;
 		private readonly Color WinRankColor_Lose = Color.Red;

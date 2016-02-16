@@ -45,5 +45,7 @@ namespace BrowserLib {
 		[OperationContract]
 		void SetIconResource( byte[] canvas );
 
+		//[OperationContract]
+		//void GetKancolleScreenRect( ref int x, ref int y, ref uint width, ref uint height );
 	}
 }

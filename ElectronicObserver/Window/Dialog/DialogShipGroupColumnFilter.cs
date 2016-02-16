@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogShipGroupColumnFilter : Form {
+	public partial class DialogShipGroupColumnFilter : FormBase {
 
 		public List<ShipGroupData.ViewColumnData> Result { get; private set; }
 		public int ScrollLockColumnCount { get; private set; }

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogWhitecap : Form {
+	public partial class DialogWhitecap : FormBase {
 
 		private int[,,] board;
 		private Size boardSize;

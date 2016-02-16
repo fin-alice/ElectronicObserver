@@ -16,7 +16,7 @@ namespace ElectronicObserver.Window {
 	/// <summary>
 	/// ウィンドウキャプチャ
 	/// </summary>
-	public partial class FormWindowCapture : DockContent {
+	public partial class FormWindowCapture : DockContentBase {
 
 		public static readonly String WARNING_MESSAGE = 
 				"このウィンドウをキャプチャします。よろしいですか？\r\n\r\n" +

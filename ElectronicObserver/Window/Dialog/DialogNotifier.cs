@@ -16,7 +16,7 @@ namespace ElectronicObserver.Window.Dialog {
 	/// <summary>
 	/// 通知ダイアログ
 	/// </summary>
-	public partial class DialogNotifier : Form {
+	public partial class DialogNotifier : FormBase {
 
 
 		public NotifierDialogData DialogData { get; set; }

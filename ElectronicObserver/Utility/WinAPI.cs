@@ -36,50 +36,23 @@ namespace ElectronicObserver.Utility {
 		[DllImport( "user32.dll", SetLastError = true )]
 		public static extern bool ClientToScreen( IntPtr hWnd, out Point lpPoint );
 
+		[DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
+		public static extern bool ScreenToClient(IntPtr hWnd, out Point lpPoint);
+
 		[DllImport( "user32.dll", SetLastError = true )]
 		public static extern bool GetClientRect( IntPtr hWnd, out RECT lpRect );
 
 		[DllImport( "user32.dll", SetLastError = true )]
 		public static extern bool AdjustWindowRect( ref RECT lpRect, uint dwStyle, bool bMenu );
 
-		[DllImport( "user32.dll", EntryPoint = "GetWindowLong", SetLastError = true )]
-		private static extern IntPtr GetWindowLong32( IntPtr hWnd, int nIndex );
+		[DllImport( "user32.dll", ExactSpelling = true, EntryPoint = "GetWindowLongPtr", SetLastError = true )]
+		public static extern IntPtr GetWindowLong( IntPtr hWnd, int nIndex );
 
-		[DllImport( "user32.dll", EntryPoint = "GetWindowLongPtr", SetLastError = true )]
-		private static extern IntPtr GetWindowLong64( IntPtr hWnd, int nIndex );
+		[DllImport( "user32.dll", ExactSpelling = true, EntryPoint = "GetClassLongPtr", SetLastError = true )]
+		public static extern IntPtr GeClassLong( IntPtr hWnd, int nIndex );
 
-		public static IntPtr GetWindowLong( IntPtr hWnd, int nIndex ) {
-			if ( IntPtr.Size == 4 ) {
-				return GetWindowLong32( hWnd, nIndex );
-			}
-			return GetWindowLong64( hWnd, nIndex );
-		}
-
-		[DllImport( "user32.dll", EntryPoint = "GetClassLong", SetLastError = true )]
-		private static extern IntPtr GetClassLong32( IntPtr hWnd, int nIndex );
-
-		[DllImport( "user32.dll", EntryPoint = "GetClassLongPtr", SetLastError = true )]
-		private static extern IntPtr GetClassLong64( IntPtr hWnd, int nIndex );
-
-		public static IntPtr GeClassLong( IntPtr hWnd, int nIndex ) {
-			if ( IntPtr.Size == 4 ) {
-				return GetClassLong32( hWnd, nIndex );
-			}
-			return GetClassLong64( hWnd, nIndex );
-		}
-
-		[DllImport( "user32.dll", EntryPoint = "SetWindowLong", SetLastError = true )]
-		public static extern IntPtr SetWindowLong32( IntPtr hwnd, int nIndex, IntPtr dwNewLong );
-
-		[DllImport( "user32.dll", EntryPoint = "SetWindowLongPtr", SetLastError = true )]
-		public static extern IntPtr SetWindowLong64( IntPtr hwnd, int nIndex, IntPtr dwNewLong );
-
-		public static IntPtr SetWindowLong( IntPtr hWnd, int nIndex, IntPtr dwNewLong ) {
-			if ( IntPtr.Size == 4 ) {
-				return SetWindowLong32( hWnd, nIndex, dwNewLong );
-			}
-			return SetWindowLong64( hWnd, nIndex, dwNewLong );
-		}
+		[DllImport( "user32.dll", ExactSpelling = true, EntryPoint = "SetWindowLongPtr", SetLastError = true )]
+		public static extern IntPtr SetWindowLong( IntPtr hwnd, int nIndex, IntPtr dwNewLong );
 
 		[DllImport( "user32.dll", SetLastError = true )]
 		public static extern uint SetParent( IntPtr hWndChild, IntPtr hWndNewParent );
@@ -101,6 +74,13 @@ namespace ElectronicObserver.Utility {
 
 		[DllImport( "user32.dll", SetLastError = true )]
 		public static extern IntPtr GetAncestor( IntPtr hWnd, int gaFlags );
+
+		[DllImport( "user32.dll", ExactSpelling = true, EntryPoint = "GetAsyncKeyState", SetLastError = true )]
+		public static extern short User32_GetAsyncKeyState( int vKey );
+
+		public static bool GetAsyncKeyState( int vKey ) {
+			return ( User32_GetAsyncKeyState( vKey ) >> 15 ) != 0;
+		}
 
 		[StructLayout( LayoutKind.Sequential )]
 		public struct RECT {
@@ -166,5 +146,7 @@ namespace ElectronicObserver.Utility {
 										 WS_SYSMENU );
 
 		public const int WS_CHILDWINDOW = ( WS_CHILD );
+
+		public const int VK_SHIFT = 0x10;
 	}
 }

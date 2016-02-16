@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogAlbumMasterShip : Form {
+	public partial class DialogAlbumMasterShip : FormBase {
 
 		private int _shipID;
 

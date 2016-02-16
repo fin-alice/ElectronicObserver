@@ -20,7 +20,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace ElectronicObserver.Window {
 
-	public partial class FormCompass : DockContent {
+	public partial class FormCompass : DockContentBase {
 
 
 		private class TableEnemyMemberControl {

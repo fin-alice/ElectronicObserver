@@ -22,7 +22,7 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace ElectronicObserver.Window {
-	public partial class FormMain : Form {
+	public partial class FormMain : FormBase {
 
 		#region Properties
 
@@ -223,15 +223,15 @@ namespace ElectronicObserver.Window {
 
 
 			if ( c.Life.LockLayout ) {
-				MainDockPanel.AllowChangeLayout = false;
+				//MainDockPanel.AllowChangeLayout = false;
 				FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			} else {
-				MainDockPanel.AllowChangeLayout = true;
+				//MainDockPanel.AllowChangeLayout = true;
 				FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
 			}
 
 			StripMenu_File_Layout_LockLayout.Checked = c.Life.LockLayout;
-			MainDockPanel.CanCloseFloatWindowInLock = c.Life.CanCloseFloatWindowInLock;
+			//MainDockPanel.CanCloseFloatWindowInLock = c.Life.CanCloseFloatWindowInLock;
 
 			if ( !c.Control.UseSystemVolume )
 				_volumeUpdateState = -1;
@@ -338,7 +338,7 @@ namespace ElectronicObserver.Window {
 
 		private void FormMain_FormClosing( object sender, FormClosingEventArgs e ) {
 
-			if ( Utility.Configuration.Config.Life.ConfirmOnClosing ) {
+			if ( Utility.Configuration.Config.Life.ConfirmOnClosing && !WinAPI.GetAsyncKeyState( WinAPI.VK_SHIFT ) ) {
 				if ( MessageBox.Show( SoftwareInformation.SoftwareNameJapanese + " を終了しますか？", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2 )
 					== System.Windows.Forms.DialogResult.No ) {
 					e.Cancel = true;

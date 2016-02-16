@@ -14,7 +14,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ElectronicObserver.Window.Dialog {
 
-	public partial class DialogResourceChart : Form {
+	public partial class DialogResourceChart : FormBase {
 
 
 		private enum ChartType {

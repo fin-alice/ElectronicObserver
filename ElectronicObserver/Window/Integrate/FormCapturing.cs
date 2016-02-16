@@ -14,7 +14,7 @@ namespace ElectronicObserver.Window.Integrate {
 	/// <summary>
 	/// マウスドラッグ中のポインタ表示
 	/// </summary>
-	public partial class FormCapturing : Form {
+	public partial class FormCapturing : FormBase {
 		public FormCapturing() {
 			InitializeComponent();
 		}

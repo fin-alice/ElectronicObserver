@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogDropRecordViewer : Form {
+	public partial class DialogDropRecordViewer : FormBase {
 
 		private ShipDropRecord _record;
 

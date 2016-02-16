@@ -17,7 +17,7 @@ using ElectronicObserver.Resource.Record;
 
 namespace ElectronicObserver.Window {
 
-	public partial class FormHeadquarters : DockContent {
+	public partial class FormHeadquarters : DockContentBase {
 
 		private Form _parentForm;
 

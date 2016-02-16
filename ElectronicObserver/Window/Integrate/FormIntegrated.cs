@@ -19,7 +19,7 @@ namespace ElectronicObserver.Window.Integrate {
 	/// <summary>
 	/// 取り込むウィンドウのベースとなるフォーム
 	/// </summary>
-	public partial class FormIntegrate : DockContent {
+	public partial class FormIntegrate : DockContentBase {
 
 		public readonly static String PREFIX = "FormIntegrated_";
 

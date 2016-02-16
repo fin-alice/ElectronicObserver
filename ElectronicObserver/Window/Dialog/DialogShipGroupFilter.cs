@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogShipGroupFilter : Form {
+	public partial class DialogShipGroupFilter : FormBase {
 
 		private ShipGroupData _group;
 

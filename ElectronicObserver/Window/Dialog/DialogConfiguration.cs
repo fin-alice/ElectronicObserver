@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogConfiguration : Form {
+	public partial class DialogConfiguration : FormBase {
 
 		private static readonly string RegistryPathMaster = @"Software\Microsoft\Internet Explorer\Main\FeatureControl\";
 		private static readonly string RegistryPathBrowserVersion = @"FEATURE_BROWSER_EMULATION\";

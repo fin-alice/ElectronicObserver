@@ -16,7 +16,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace ElectronicObserver.Window {
 
-	public partial class FormArsenal : DockContent {
+	public partial class FormArsenal : DockContentBase {
 
 		private class TableArsenalControl {
 

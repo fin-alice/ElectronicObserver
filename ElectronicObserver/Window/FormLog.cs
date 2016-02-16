@@ -12,7 +12,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace ElectronicObserver.Window {
 
-	public partial class FormLog : DockContent {
+	public partial class FormLog : DockContentBase {
 
 
 		public FormLog( FormMain parent ) {

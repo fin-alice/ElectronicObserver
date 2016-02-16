@@ -15,7 +15,7 @@ namespace ElectronicObserver.Window.Dialog {
 	/// <summary>
 	/// 通知システムの設定ダイアログを扱います。
 	/// </summary>
-	public partial class DialogConfigurationNotifier : Form {
+	public partial class DialogConfigurationNotifier : FormBase {
 
 		private NotifierBase _notifier;
 		private bool _soundChanged;

@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogAlbumMasterEquipment : Form {
+	public partial class DialogAlbumMasterEquipment : FormBase {
 
 
 		public DialogAlbumMasterEquipment() {

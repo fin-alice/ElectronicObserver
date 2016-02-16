@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogShipGroupCSVOutput : Form {
+	public partial class DialogShipGroupCSVOutput : FormBase {
 
 		/// <summary>
 		/// 出力フィルタを指定します。

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogLocalAPILoader2 : Form {
+	public partial class DialogLocalAPILoader2 : FormBase {
 
 
 		private string CurrentPath { get; set; }

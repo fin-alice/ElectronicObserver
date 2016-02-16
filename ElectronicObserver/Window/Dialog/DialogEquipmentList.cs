@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogEquipmentList : Form {
+	public partial class DialogEquipmentList : FormBase {
 
 
 		private DataGridViewCellStyle CSDefaultLeft, CSDefaultRight, 

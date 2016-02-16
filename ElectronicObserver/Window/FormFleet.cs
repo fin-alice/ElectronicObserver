@@ -21,7 +21,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace ElectronicObserver.Window {
 
-	public partial class FormFleet : DockContent {
+	public partial class FormFleet : DockContentBase {
 
 		private bool IsRemodeling = false;
 

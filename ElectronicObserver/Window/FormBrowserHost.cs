@@ -17,6 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
+using ElectronicObserver.Utility;
 
 namespace ElectronicObserver.Window {
 
@@ -28,6 +29,9 @@ namespace ElectronicObserver.Window {
 
 
 		public static readonly string BrowserExeName = "EOBrowser.exe";
+
+		public ITaskbarList3 TaskbarList = new TaskbarList();
+		FormMain FormParent;
 
 
 		/// <summary>
@@ -57,6 +61,9 @@ namespace ElectronicObserver.Window {
 			InitializeComponent();
 
 			Icon = ResourceManager.ImageToIcon( ResourceManager.Instance.Icons.Images[(int)ResourceManager.IconContent.FormBrowser] );
+
+			FormParent = parent;
+			TaskbarList.HrInit();
 		}
 
 		public void InitializeApiCompleted() {
@@ -70,6 +77,7 @@ namespace ElectronicObserver.Window {
 
 		private void FormBrowser_Load( object sender, EventArgs e ) {
 			LaunchBrowserProcess();
+			UpdateTaskbarThumbnailRect();
 		}
 
 
@@ -357,9 +365,32 @@ namespace ElectronicObserver.Window {
 
 		}
 
+		void UpdateTaskbarThumbnailRect()
+		{
+			var BrowserRect = new WinAPI.RECT();
+
+			WinAPI.GetWindowRect( this.Handle, out BrowserRect );
+
+			var _rp = new Point();
+			_rp.X = BrowserRect.left;
+			_rp.Y = BrowserRect.top;
+			WinAPI.ScreenToClient( this.FormParent.Handle, out _rp );
+
+			BrowserRect.right = _rp.X + (BrowserRect.right - BrowserRect.left);
+			BrowserRect.bottom = _rp.Y + (BrowserRect.bottom - BrowserRect.top);
+			BrowserRect.left = _rp.X;
+			BrowserRect.top = _rp.Y;
+
+			var _g = GCHandle.Alloc( BrowserRect, GCHandleType.Pinned );
+			IntPtr _p = _g.AddrOfPinnedObject();
+			TaskbarList.SetThumbnailClip( this.FormParent.Handle, _p );
+			_g.Free();
+		}
+
 		private void FormBrowserHost_Resize( object sender, EventArgs e ) {
 			if ( BrowserWnd != IntPtr.Zero ) {
 				MoveWindow( BrowserWnd, 0, 0, this.Width, this.Height, true );
+				this.UpdateTaskbarThumbnailRect();
 			}
 		}
 
@@ -386,6 +417,10 @@ namespace ElectronicObserver.Window {
 
 		#endregion
 
+		private void FormBrowserHost_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			TaskbarList.SetThumbnailClip( IntPtr.Zero, IntPtr.Zero );
+		}
 	}
 
 

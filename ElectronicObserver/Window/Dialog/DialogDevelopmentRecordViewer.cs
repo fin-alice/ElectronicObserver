@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogDevelopmentRecordViewer : Form {
+	public partial class DialogDevelopmentRecordViewer : FormBase {
 
 		private DevelopmentRecord _record;
 

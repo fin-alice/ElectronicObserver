@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogTextSelect : Form {
+	public partial class DialogTextSelect : FormBase {
 
 		public int SelectedIndex {
 			get { return TextSelect.SelectedIndex; }

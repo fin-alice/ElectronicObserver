@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
 
-	public partial class DialogTextInput : Form {
+	public partial class DialogTextInput : FormBase {
 
 		/// <summary>
 		/// 入力されたテキスト

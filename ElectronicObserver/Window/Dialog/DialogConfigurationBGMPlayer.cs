@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectronicObserver.Window.Dialog {
-	public partial class DialogConfigurationBGMPlayer : Form {
+	public partial class DialogConfigurationBGMPlayer : FormBase {
 
 		public SyncBGMPlayer.SoundHandle ResultHandle { get; private set; }
 
