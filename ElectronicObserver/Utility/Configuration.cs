@@ -120,6 +120,11 @@ namespace ElectronicObserver.Utility {
 				/// </summary>
 				public string DownstreamProxy { get; set; }
 
+				/// <summary>
+				/// 上流プロキシをHTTPSにも適用する
+				/// </summary>
+				public bool UpstreamProxyForHttps { get; set; }
+
 
 				/// <summary>
 				/// kancolle-db.netに送信する
@@ -154,6 +159,7 @@ namespace ElectronicObserver.Utility {
 					UpstreamProxyAddress = "127.0.0.1";
 					UseSystemProxy = false;
 					DownstreamProxy = "";
+					UpstreamProxyForHttps = false;
 					SendDataToKancolleDB = false;
 					SendKancolleOAuth = "";
 					SendDataToKCVDB = false;
