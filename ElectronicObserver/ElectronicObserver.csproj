@@ -374,12 +374,6 @@
     <Compile Include="Window\Dialog\DialogHalloween.Designer.cs">
       <DependentUpon>DialogHalloween.cs</DependentUpon>
     </Compile>
-    <Compile Include="Window\Dialog\DialogInvitationKCVDB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Window\Dialog\DialogInvitationKCVDB.Designer.cs">
-      <DependentUpon>DialogInvitationKCVDB.cs</DependentUpon>
-    </Compile>
     <Compile Include="Window\Dialog\DialogLocalAPILoader.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -616,9 +610,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Dialog\DialogHalloween.resx">
       <DependentUpon>DialogHalloween.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Window\Dialog\DialogInvitationKCVDB.resx">
-      <DependentUpon>DialogInvitationKCVDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Dialog\DialogLocalAPILoader.resx">
       <DependentUpon>DialogLocalAPILoader.cs</DependentUpon>

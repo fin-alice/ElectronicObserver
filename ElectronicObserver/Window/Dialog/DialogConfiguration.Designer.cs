@@ -24,7 +24,7 @@
 		/// </summary>
 		private void InitializeComponent() {
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.Connection_UpstreamProxyAddress = new System.Windows.Forms.TextBox();
@@ -68,6 +68,8 @@
 			this.Log_LogLevel = new System.Windows.Forms.NumericUpDown();
 			this.label6 = new System.Windows.Forms.Label();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.Control_PowerEngagementForm = new System.Windows.Forms.ComboBox();
+			this.label29 = new System.Windows.Forms.Label();
 			this.Control_UseSystemVolume = new System.Windows.Forms.CheckBox();
 			this.Control_RecordAutoSaving = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
@@ -95,6 +97,8 @@
 			this.tabPage7 = new System.Windows.Forms.TabPage();
 			this.tabControl2 = new System.Windows.Forms.TabControl();
 			this.tabPage8 = new System.Windows.Forms.TabPage();
+			this.FormFleet_EquipmentLevelVisibility = new System.Windows.Forms.ComboBox();
+			this.label28 = new System.Windows.Forms.Label();
 			this.FormFleet_BlinkAtCompletion = new System.Windows.Forms.CheckBox();
 			this.FormFleet_ShowAnchorageRepairingTimer = new System.Windows.Forms.CheckBox();
 			this.FormFleet_AirSuperiorityMethod = new System.Windows.Forms.ComboBox();
@@ -167,10 +171,6 @@
 			this.Notification_Construction = new System.Windows.Forms.Button();
 			this.Notification_Expedition = new System.Windows.Forms.Button();
 			this.tabPage15 = new System.Windows.Forms.TabPage();
-			this.groupBox6 = new System.Windows.Forms.GroupBox();
-			this.label25 = new System.Windows.Forms.Label();
-			this.Database_LinkKCVDB = new System.Windows.Forms.LinkLabel();
-			this.Database_SendDataToKCVDB = new System.Windows.Forms.CheckBox();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.label22 = new System.Windows.Forms.Label();
 			this.Database_SendKancolleOAuth = new System.Windows.Forms.TextBox();
@@ -194,8 +194,7 @@
 			this.FontSelector = new System.Windows.Forms.FontDialog();
 			this.LayoutFileBrowser = new System.Windows.Forms.OpenFileDialog();
 			this.APIListBrowser = new System.Windows.Forms.OpenFileDialog();
-			this.FormFleet_EquipmentLevelVisibility = new System.Windows.Forms.ComboBox();
-			this.label28 = new System.Windows.Forms.Label();
+			this.FormQuest_AllowUserToSortRows = new System.Windows.Forms.CheckBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Connection_UpstreamProxyPort)).BeginInit();
@@ -228,7 +227,6 @@
 			this.groupBox3.SuspendLayout();
 			this.tabPage11.SuspendLayout();
 			this.tabPage15.SuspendLayout();
-			this.groupBox6.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.tabPage17.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.BGMPlayer_VolumeAll)).BeginInit();
@@ -737,6 +735,8 @@
 			// 
 			// tabPage4
 			// 
+			this.tabPage4.Controls.Add(this.Control_PowerEngagementForm);
+			this.tabPage4.Controls.Add(this.label29);
 			this.tabPage4.Controls.Add(this.Control_UseSystemVolume);
 			this.tabPage4.Controls.Add(this.Control_RecordAutoSaving);
 			this.tabPage4.Controls.Add(this.label9);
@@ -750,13 +750,37 @@
 			this.tabPage4.Text = "動作";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
+			// Control_PowerEngagementForm
+			// 
+			this.Control_PowerEngagementForm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.Control_PowerEngagementForm.FormattingEnabled = true;
+			this.Control_PowerEngagementForm.Items.AddRange(new object[] {
+            "同航戦",
+            "反航戦",
+            "T字有利",
+            "T字不利"});
+			this.Control_PowerEngagementForm.Location = new System.Drawing.Point(124, 64);
+			this.Control_PowerEngagementForm.Name = "Control_PowerEngagementForm";
+			this.Control_PowerEngagementForm.Size = new System.Drawing.Size(121, 23);
+			this.Control_PowerEngagementForm.TabIndex = 5;
+			this.ToolTipInfo.SetToolTip(this.Control_PowerEngagementForm, "威力（戦闘における攻撃力）を計算する際の、基準となる交戦形態を設定します。");
+			// 
+			// label29
+			// 
+			this.label29.AutoSize = true;
+			this.label29.Location = new System.Drawing.Point(6, 67);
+			this.label29.Name = "label29";
+			this.label29.Size = new System.Drawing.Size(115, 15);
+			this.label29.TabIndex = 4;
+			this.label29.Text = "威力表示交戦形態：";
+			// 
 			// Control_UseSystemVolume
 			// 
 			this.Control_UseSystemVolume.AutoSize = true;
-			this.Control_UseSystemVolume.Location = new System.Drawing.Point(6, 64);
+			this.Control_UseSystemVolume.Location = new System.Drawing.Point(9, 93);
 			this.Control_UseSystemVolume.Name = "Control_UseSystemVolume";
 			this.Control_UseSystemVolume.Size = new System.Drawing.Size(230, 19);
-			this.Control_UseSystemVolume.TabIndex = 4;
+			this.Control_UseSystemVolume.TabIndex = 6;
 			this.Control_UseSystemVolume.Text = "通知・BGM音量にシステム設定を利用する";
 			this.ToolTipInfo.SetToolTip(this.Control_UseSystemVolume, "通知・BGM等の本体音量設定に、システム音量設定を利用するかを指定します。\r\n無効の場合は個別に音量を設定できますが、音量ミキサ等で調整できなくなります。\r\n有効" +
         "の場合は音量ミキサ等で調整できますが、個別の音量設定は無視されます。");
@@ -839,7 +863,7 @@
 			this.Debug_SealingPanel.Controls.Add(this.Debug_APIListPathSearch);
 			this.Debug_SealingPanel.Location = new System.Drawing.Point(0, 56);
 			this.Debug_SealingPanel.Name = "Debug_SealingPanel";
-			this.Debug_SealingPanel.Size = new System.Drawing.Size(456, 217);
+			this.Debug_SealingPanel.Size = new System.Drawing.Size(456, 249);
 			this.Debug_SealingPanel.TabIndex = 1;
 			// 
 			// Debug_APIListPath
@@ -1074,6 +1098,33 @@
 			this.tabPage8.Text = "艦隊";
 			this.tabPage8.UseVisualStyleBackColor = true;
 			// 
+			// FormFleet_EquipmentLevelVisibility
+			// 
+			this.FormFleet_EquipmentLevelVisibility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.FormFleet_EquipmentLevelVisibility.FormattingEnabled = true;
+			this.FormFleet_EquipmentLevelVisibility.Items.AddRange(new object[] {
+            "非表示",
+            "改修レベルのみ",
+            "艦載機熟練度のみ",
+            "改修レベル優先",
+            "艦載機熟練度優先",
+            "両方表示"});
+			this.FormFleet_EquipmentLevelVisibility.Location = new System.Drawing.Point(253, 86);
+			this.FormFleet_EquipmentLevelVisibility.Name = "FormFleet_EquipmentLevelVisibility";
+			this.FormFleet_EquipmentLevelVisibility.Size = new System.Drawing.Size(160, 23);
+			this.FormFleet_EquipmentLevelVisibility.TabIndex = 13;
+			this.ToolTipInfo.SetToolTip(this.FormFleet_EquipmentLevelVisibility, "装備の改修レベルや艦載機熟練度の表示を指定します。\r\n「非表示」の場合は表示しません。\r\n「～優先」の場合、どちらもLv.1以上の時にそれぞれを優先して表示します" +
+        "。\r\n「両方表示」の場合は常にどちらも表示します。");
+			// 
+			// label28
+			// 
+			this.label28.AutoSize = true;
+			this.label28.Location = new System.Drawing.Point(156, 89);
+			this.label28.Name = "label28";
+			this.label28.Size = new System.Drawing.Size(91, 15);
+			this.label28.TabIndex = 12;
+			this.label28.Text = "装備情報表示：";
+			// 
 			// FormFleet_BlinkAtCompletion
 			// 
 			this.FormFleet_BlinkAtCompletion.AutoSize = true;
@@ -1200,7 +1251,7 @@
 			this.tabPage9.Location = new System.Drawing.Point(4, 22);
 			this.tabPage9.Name = "tabPage9";
 			this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage9.Size = new System.Drawing.Size(442, 201);
+			this.tabPage9.Size = new System.Drawing.Size(442, 221);
 			this.tabPage9.TabIndex = 1;
 			this.tabPage9.Text = "工廠";
 			this.tabPage9.UseVisualStyleBackColor = true;
@@ -1231,7 +1282,7 @@
 			this.tabPage19.Location = new System.Drawing.Point(4, 22);
 			this.tabPage19.Name = "tabPage19";
 			this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage19.Size = new System.Drawing.Size(442, 201);
+			this.tabPage19.Size = new System.Drawing.Size(442, 221);
 			this.tabPage19.TabIndex = 8;
 			this.tabPage19.Text = "入渠";
 			this.tabPage19.UseVisualStyleBackColor = true;
@@ -1254,7 +1305,7 @@
 			this.tabPage16.Location = new System.Drawing.Point(4, 22);
 			this.tabPage16.Name = "tabPage16";
 			this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage16.Size = new System.Drawing.Size(442, 201);
+			this.tabPage16.Size = new System.Drawing.Size(442, 221);
 			this.tabPage16.TabIndex = 6;
 			this.tabPage16.Text = "司令部";
 			this.tabPage16.UseVisualStyleBackColor = true;
@@ -1277,7 +1328,7 @@
 			this.FormHeadquarters_Visibility.IntegralHeight = false;
 			this.FormHeadquarters_Visibility.Location = new System.Drawing.Point(6, 46);
 			this.FormHeadquarters_Visibility.Name = "FormHeadquarters_Visibility";
-			this.FormHeadquarters_Visibility.Size = new System.Drawing.Size(150, 149);
+			this.FormHeadquarters_Visibility.Size = new System.Drawing.Size(150, 169);
 			this.FormHeadquarters_Visibility.TabIndex = 1;
 			// 
 			// FormHeadquarters_BlinkAtMaximum
@@ -1297,7 +1348,7 @@
 			this.tabPage18.Location = new System.Drawing.Point(4, 22);
 			this.tabPage18.Name = "tabPage18";
 			this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage18.Size = new System.Drawing.Size(442, 201);
+			this.tabPage18.Size = new System.Drawing.Size(442, 221);
 			this.tabPage18.TabIndex = 7;
 			this.tabPage18.Text = "羅針盤";
 			this.tabPage18.UseVisualStyleBackColor = true;
@@ -1336,14 +1387,15 @@
 			// 
 			// tabPage10
 			// 
+			this.tabPage10.Controls.Add(this.FormQuest_AllowUserToSortRows);
 			this.tabPage10.Controls.Add(this.FormQuest_ProgressAutoSaving);
 			this.tabPage10.Controls.Add(this.label27);
 			this.tabPage10.Controls.Add(this.groupBox1);
 			this.tabPage10.Controls.Add(this.FormQuest_ShowRunningOnly);
-			this.tabPage10.Location = new System.Drawing.Point(4, 22);
+			this.tabPage10.Location = new System.Drawing.Point(4, 24);
 			this.tabPage10.Name = "tabPage10";
 			this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage10.Size = new System.Drawing.Size(442, 201);
+			this.tabPage10.Size = new System.Drawing.Size(442, 199);
 			this.tabPage10.TabIndex = 2;
 			this.tabPage10.Text = "任務";
 			this.tabPage10.UseVisualStyleBackColor = true;
@@ -1440,7 +1492,7 @@
 			this.tabPage13.Location = new System.Drawing.Point(4, 22);
 			this.tabPage13.Name = "tabPage13";
 			this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage13.Size = new System.Drawing.Size(442, 201);
+			this.tabPage13.Size = new System.Drawing.Size(442, 221);
 			this.tabPage13.TabIndex = 4;
 			this.tabPage13.Text = "グループ";
 			this.tabPage13.UseVisualStyleBackColor = true;
@@ -1482,7 +1534,7 @@
 			this.tabPage12.Location = new System.Drawing.Point(4, 22);
 			this.tabPage12.Name = "tabPage12";
 			this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage12.Size = new System.Drawing.Size(442, 201);
+			this.tabPage12.Size = new System.Drawing.Size(442, 221);
 			this.tabPage12.TabIndex = 3;
 			this.tabPage12.Text = "ブラウザ";
 			this.tabPage12.UseVisualStyleBackColor = true;
@@ -1663,7 +1715,7 @@
 			this.tabPage14.Location = new System.Drawing.Point(4, 22);
 			this.tabPage14.Name = "tabPage14";
 			this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage14.Size = new System.Drawing.Size(442, 201);
+			this.tabPage14.Size = new System.Drawing.Size(442, 221);
 			this.tabPage14.TabIndex = 5;
 			this.tabPage14.Text = "ブラウザ2";
 			this.tabPage14.UseVisualStyleBackColor = true;
@@ -1893,7 +1945,6 @@
 			// 
 			// tabPage15
 			// 
-			this.tabPage15.Controls.Add(this.groupBox6);
 			this.tabPage15.Controls.Add(this.groupBox5);
 			this.tabPage15.Location = new System.Drawing.Point(4, 44);
 			this.tabPage15.Name = "tabPage15";
@@ -1902,50 +1953,6 @@
 			this.tabPage15.TabIndex = 8;
 			this.tabPage15.Text = "データベース";
 			this.tabPage15.UseVisualStyleBackColor = true;
-			// 
-			// groupBox6
-			// 
-			this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBox6.Controls.Add(this.label25);
-			this.groupBox6.Controls.Add(this.Database_LinkKCVDB);
-			this.groupBox6.Controls.Add(this.Database_SendDataToKCVDB);
-			this.groupBox6.Location = new System.Drawing.Point(6, 129);
-			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(444, 98);
-			this.groupBox6.TabIndex = 6;
-			this.groupBox6.TabStop = false;
-			this.groupBox6.Text = "艦これ検証データベース";
-			// 
-			// label25
-			// 
-			this.label25.AutoSize = true;
-			this.label25.Location = new System.Drawing.Point(6, 19);
-			this.label25.Name = "label25";
-			this.label25.Size = new System.Drawing.Size(314, 30);
-			this.label25.TabIndex = 3;
-			this.label25.Text = "「艦これ検証データベース」へデータを送信できます。\r\n詳細は以下のサイトを参照してください。(外部ブラウザが開きます)";
-			// 
-			// Database_LinkKCVDB
-			// 
-			this.Database_LinkKCVDB.AutoSize = true;
-			this.Database_LinkKCVDB.Location = new System.Drawing.Point(6, 49);
-			this.Database_LinkKCVDB.Name = "Database_LinkKCVDB";
-			this.Database_LinkKCVDB.Size = new System.Drawing.Size(158, 15);
-			this.Database_LinkKCVDB.TabIndex = 4;
-			this.Database_LinkKCVDB.TabStop = true;
-			this.Database_LinkKCVDB.Text = "http://kcvdb.jp/guidelines";
-			this.Database_LinkKCVDB.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Database_LinkKCVDB_LinkClicked);
-			// 
-			// Database_SendDataToKCVDB
-			// 
-			this.Database_SendDataToKCVDB.AutoSize = true;
-			this.Database_SendDataToKCVDB.Location = new System.Drawing.Point(9, 67);
-			this.Database_SendDataToKCVDB.Name = "Database_SendDataToKCVDB";
-			this.Database_SendDataToKCVDB.Size = new System.Drawing.Size(190, 19);
-			this.Database_SendDataToKCVDB.TabIndex = 5;
-			this.Database_SendDataToKCVDB.Text = "艦これ検証データベースに送信する";
-			this.Database_SendDataToKCVDB.UseVisualStyleBackColor = true;
 			// 
 			// groupBox5
 			// 
@@ -2086,21 +2093,21 @@
             this.BGMPlayer_ColumnContent,
             this.BGMPlayer_ColumnPath,
             this.BGMPlayer_ColumnSetting});
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.BGMPlayer_ControlGrid.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.BGMPlayer_ControlGrid.DefaultCellStyle = dataGridViewCellStyle1;
 			this.BGMPlayer_ControlGrid.Location = new System.Drawing.Point(6, 35);
 			this.BGMPlayer_ControlGrid.MultiSelect = false;
 			this.BGMPlayer_ControlGrid.Name = "BGMPlayer_ControlGrid";
 			this.BGMPlayer_ControlGrid.RowHeadersVisible = false;
 			this.BGMPlayer_ControlGrid.RowTemplate.Height = 21;
 			this.BGMPlayer_ControlGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.BGMPlayer_ControlGrid.Size = new System.Drawing.Size(444, 148);
+			this.BGMPlayer_ControlGrid.Size = new System.Drawing.Size(444, 140);
 			this.BGMPlayer_ControlGrid.TabIndex = 0;
 			this.BGMPlayer_ControlGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BGMPlayer_ControlGrid_CellContentClick);
 			this.BGMPlayer_ControlGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.BGMPlayer_ControlGrid_CellFormatting);
@@ -2182,32 +2189,15 @@
 			this.APIListBrowser.Filter = "Text File|*.txt|File|*";
 			this.APIListBrowser.Title = "API リストを開く";
 			// 
-			// FormFleet_EquipmentLevelVisibility
+			// FormQuest_AllowUserToSortRows
 			// 
-			this.FormFleet_EquipmentLevelVisibility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.FormFleet_EquipmentLevelVisibility.FormattingEnabled = true;
-			this.FormFleet_EquipmentLevelVisibility.Items.AddRange(new object[] {
-            "非表示",
-            "改修レベルのみ",
-            "艦載機熟練度のみ",
-            "改修レベル優先",
-            "艦載機熟練度優先",
-            "両方表示"});
-			this.FormFleet_EquipmentLevelVisibility.Location = new System.Drawing.Point(253, 86);
-			this.FormFleet_EquipmentLevelVisibility.Name = "FormFleet_EquipmentLevelVisibility";
-			this.FormFleet_EquipmentLevelVisibility.Size = new System.Drawing.Size(160, 23);
-			this.FormFleet_EquipmentLevelVisibility.TabIndex = 13;
-			this.ToolTipInfo.SetToolTip(this.FormFleet_EquipmentLevelVisibility, "装備の改修レベルや艦載機熟練度の表示を指定します。\r\n「非表示」の場合は表示しません。\r\n「～優先」の場合、どちらもLv.1以上の時にそれぞれを優先して表示します" +
-        "。\r\n「両方表示」の場合は常にどちらも表示します。");
-			// 
-			// label28
-			// 
-			this.label28.AutoSize = true;
-			this.label28.Location = new System.Drawing.Point(156, 89);
-			this.label28.Name = "label28";
-			this.label28.Size = new System.Drawing.Size(91, 15);
-			this.label28.TabIndex = 12;
-			this.label28.Text = "装備情報表示：";
+			this.FormQuest_AllowUserToSortRows.AutoSize = true;
+			this.FormQuest_AllowUserToSortRows.Location = new System.Drawing.Point(141, 35);
+			this.FormQuest_AllowUserToSortRows.Name = "FormQuest_AllowUserToSortRows";
+			this.FormQuest_AllowUserToSortRows.Size = new System.Drawing.Size(150, 19);
+			this.FormQuest_AllowUserToSortRows.TabIndex = 6;
+			this.FormQuest_AllowUserToSortRows.Text = "ソート順を変更可能にする";
+			this.FormQuest_AllowUserToSortRows.UseVisualStyleBackColor = true;
 			// 
 			// DialogConfiguration
 			// 
@@ -2281,8 +2271,6 @@
 			this.tabPage11.ResumeLayout(false);
 			this.tabPage11.PerformLayout();
 			this.tabPage15.ResumeLayout(false);
-			this.groupBox6.ResumeLayout(false);
-			this.groupBox6.PerformLayout();
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox5.PerformLayout();
 			this.tabPage17.ResumeLayout(false);
@@ -2454,10 +2442,6 @@
 		private System.Windows.Forms.CheckBox FormArsenal_BlinkAtCompletion;
 		private System.Windows.Forms.TabPage tabPage19;
 		private System.Windows.Forms.CheckBox FormDock_BlinkAtCompletion;
-		private System.Windows.Forms.GroupBox groupBox6;
-		private System.Windows.Forms.Label label25;
-		private System.Windows.Forms.LinkLabel Database_LinkKCVDB;
-		private System.Windows.Forms.CheckBox Database_SendDataToKCVDB;
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.CheckedListBox FormHeadquarters_Visibility;
 		private System.Windows.Forms.Label label26;
@@ -2466,5 +2450,8 @@
 		private System.Windows.Forms.Label label27;
 		private System.Windows.Forms.ComboBox FormFleet_EquipmentLevelVisibility;
 		private System.Windows.Forms.Label label28;
+		private System.Windows.Forms.ComboBox Control_PowerEngagementForm;
+		private System.Windows.Forms.Label label29;
+		private System.Windows.Forms.CheckBox FormQuest_AllowUserToSortRows;
 	}
 }
