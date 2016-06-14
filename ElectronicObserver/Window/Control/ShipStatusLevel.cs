@@ -172,10 +172,13 @@ namespace ElectronicObserver.Window.Control {
 			Rectangle basearea = new Rectangle( Padding.Left, Padding.Top, Width - Padding.Horizontal, Height - Padding.Vertical );
 			//e.Graphics.DrawRectangle( Pens.Magenta, new Rectangle( basearea.X, basearea.Y, basearea.Width - 1, basearea.Height - 1 ) );
 
+			var leftfornext = Math.Max( ValueNext, MaximumValueNext );
+			var valuenext_str = (leftfornext == 0 ) ? "∞" : leftfornext.ToString();
+
 			Size sz_value = TextRenderer.MeasureText( Math.Max( Value, MaximumValue ).ToString(), MainFont, maxsize, TextFormatValue );
 			Size sz_text = TextRenderer.MeasureText( Text, SubFont, maxsize, TextFormatText );
 			Size sz_textnext = TextRenderer.MeasureText( TextNext, SubFont, maxsize, TextFormatText );
-			Size sz_valuenext = TextRenderer.MeasureText( Math.Max( ValueNext, MaximumValueNext ).ToString(), SubFont, maxsize, TextFormatText );
+			Size sz_valuenext = TextRenderer.MeasureText( valuenext_str, SubFont, maxsize, TextFormatText );
 
 
 			sz_value.Width -= (int)( MainFont.Size / 2.0 );
@@ -214,7 +217,7 @@ namespace ElectronicObserver.Window.Control {
 
 			p.Y = basearea.Bottom - sz_valuenext.Height + 1;
 			if ( TextNext != null ) {
-				TextRenderer.DrawText( e.Graphics, ValueNext.ToString(), SubFont, new Rectangle( p, sz_valuenext ), SubFontColor, TextFormatText );
+				TextRenderer.DrawText( e.Graphics, valuenext_str, SubFont, new Rectangle( p, sz_valuenext ), SubFontColor, TextFormatText );
 				//e.Graphics.DrawRectangle( Pens.Orange, new Rectangle( p, sz_valuenext ) );
 			}
 
