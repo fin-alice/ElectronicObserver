@@ -173,7 +173,7 @@ namespace ElectronicObserver.Window.Control {
 			//e.Graphics.DrawRectangle( Pens.Magenta, new Rectangle( basearea.X, basearea.Y, basearea.Width - 1, basearea.Height - 1 ) );
 
 			var leftfornext = Math.Max( ValueNext, MaximumValueNext );
-			var valuenext_str = (leftfornext == 0 ) ? "∞" : leftfornext.ToString();
+			var valuenext_str = ( leftfornext == 0 ) ? "∞" : leftfornext.ToString();
 
 			Size sz_value = TextRenderer.MeasureText( Math.Max( Value, MaximumValue ).ToString(), MainFont, maxsize, TextFormatValue );
 			Size sz_text = TextRenderer.MeasureText( Text, SubFont, maxsize, TextFormatText );
